@@ -37,44 +37,54 @@ end
 answer = input("¿Aceleración o velocidad (a o v)?", "s");
 if answer == "a"
     disp(a);
-    % Creación de gráfico
+    % Creación de gráfico velocidad
     figure(1) %Declara nueva figura
-    plot(t, a)
+    plot(t, a, "g.")
     % Etiquetas
     title("Tiempo vs. aceleración")
-    xlabel("tiempo") 
-    ylabel("aceleración")
+    xlabel("tiempo [s]") 
+    ylabel("aceleración [cm/s^2]")
     grid
 elseif answer == "v"
     disp(v);
-    % Creación de gráfico
+    % Creación de gráfico aceleración
     figure(2) %Declara nueva figura
-    plot(t, v)
+    plot(t, v, "r.")
     % Etiquetas
     title("Tiempo vs. velocidad")
-    xlabel("tiempo") 
-    ylabel("velocidad")
+    xlabel("tiempo [s]") 
+    ylabel("velocidad [cm/s]")
     grid
 else
     disp('Solo se admite la letra "a" o la letra "v". Reinicie el programa.')
 end
 
 figure(3) %Declara nueva figura
-subplot(2,2,1) %subgrafico pos 1
-plot(t, d, "b");
+subplot(2,2,1) %dist pos 1
+plot(t, d, "b.");
 title("Distancia vs. tiempo")
-xlabel("distancia") 
-ylabel("tiempo")
+xlabel("distancia [cm]") 
+ylabel("tiempo [s]")
 grid
-subplot(2,2,2) %subgrafico pos 2
-plot(t, v, "r")
+subplot(2,2,2) %vel pos 2
+plot(t, v, "r.")
 title("Velocidad vs. tiempo")
-xlabel("velocidad") 
-ylabel("tiempo")
+xlabel("velocidad [cm/s]") 
+ylabel("tiempo [s]")
 grid
-subplot(2,2,3) %subgrafico pos 3
-plot(t, a, "g")
+subplot(2,2,3) %acc pos 3
+plot(t, a, "g.")
 title("Aceleración vs. tiempo")
-xlabel("aceleración") 
-ylabel("tiempo")
+xlabel("aceleración [cm/s^2]") 
+ylabel("tiempo [s]")
+grid
+subplot(2,2,4) %comb pos 4
+hold on %combina gráficos
+plot(t, d, "b.")
+plot(t, v, "r.")
+plot(t, a, "g.")
+hold off
+title("Distancia, Velocidad y Aceleración vs. Tiempo") %etiquetas de gráfico combinado
+xlabel("valor") 
+ylabel("tiempo [s]")
 grid

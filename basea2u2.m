@@ -61,20 +61,20 @@ end
 
 figure(3) %Declara nueva figura
 subplot(2,2,1) %subgrafico pos 1
-plot(d, t, "b");
+plot(t, d, "b");
 title("Distancia vs. tiempo")
 xlabel("distancia") 
 ylabel("tiempo")
 grid
 subplot(2,2,2) %subgrafico pos 2
-plot(d, t, "r")
-title("Distancia vs. tiempo")
-xlabel("distancia") 
+plot(t, v, "r")
+title("Velocidad vs. tiempo")
+xlabel("velocidad") 
 ylabel("tiempo")
 grid
 subplot(2,2,3) %subgrafico pos 3
-plot(d, t, "g")
-title("Distancia vs. tiempo")
-xlabel("distancia") 
+plot(t, a, "g")
+title("Aceleración vs. tiempo")
+xlabel("aceleración") 
 ylabel("tiempo")
 grid

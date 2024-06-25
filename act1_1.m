@@ -1,59 +1,45 @@
-﻿% Actividad Evaluada 1
-% Carlos Núñez.
-
-%% P1. Operaciones con vectores
-
-% 1. Define de los vectores y la constante k
-clc
+%% Comentar el funcionamiento del progragrama
+%Funcionamiento, inputs y outputs:
+%Autores: Carlos Aurelio Núñez Viera
+%Fecha: 25-06-2024
 clear
-x = [4, 6, 2];
-y = [3, -2, 4];
-k = 3;
+clc
+%% Definir variables
 
-% 2. Concadena las operaciones escritas con su resultado 
-disp("Operaciones")
+% N° de repeticion
+n=[1 2 3 4 5 6 7 8 9 10];
 
-op1 = x + y;
-disp(strcat("x + y = ", num2str(op1)))
+% Distancia [cm]
+d=[30 40 50 60 70 80 90 100 110 120];
 
-disp(" ")
-op2a = y - k;
-disp(strcat("y - k = ", num2str(op2a)))
+% Tiempo [s]
+t=[0.3 0.41 0.5 0.56 0.69 0.72 0.82 1.04 1.19 1.22];
 
-op2b = y + k;
-disp(strcat("y + k = ", num2str(op2b)))
+%% 2. Utilizando ciclos, calcular a y v:
+a = (1:1:10);
+v = (1:1:10);
+for i = 1:1:10;
+    a(i) = (2*a(i))/t(i)^2;
+    v(i) = a(i)*t(i);
+end
 
-op2c = k * y;
-disp(strcat("ky = ", num2str(op2c)))
+%% 3. Segun lo seleccionado por el usuario:
 
-op2d = x/k;
-disp(strcat("x ÷ k = ", num2str(op2d)))
+% a) Mostrar el vector seleccionado.
 
-op2e = 2*x - y;
-disp(strcat("2x - y = ", num2str(op2e)))
+% b) Mostrar Grafico velocidad vs tiempo o Grafico aceleracion vs tiempo, segun lo seleccionado.
 
-disp(" ")
-op4 = x.^2 + y.^2;
-disp(strcat("x² + y² = ", num2str(op4)))
+% c) Mostrar Graficos en formato subplot.
 
-op5 = 3/sqrt(3);
-disp(strcat("3 ÷ √3 = ", num2str(op5)))
+%% 1. Solicitar al usuario ingresar en minuscula a o v
 
-op6 = (1+x)/(y.^4);
-disp(strcat("(1 + x) ÷ y⁴ = ", num2str(op6)))
-
-%% P2. Generación de vectores
-disp(" ")
-disp("Vectores")
-
-% Concadena símbolo y vector generado con sintaxis inicio:paso:final
-v1 = (1:25);
-disp(strcat("v1 = ", num2str(v1)))
-
-disp(" ")
-v2=(1*pi:1*pi:10*pi);
-disp(strcat("v2 = ", num2str(v2)))
-
-disp(" ")
-v3=(0:0.1:1);
-disp(strcat("v3 = ", num2str(v3)))
+answer = input("¿Aceleración o velocidad (a o v)?", "s");
+if answer == "a"
+    disp(a);
+    %plot(t, a);
+elseif answer == "v"
+    disp(v);
+    %plot(t, a);
+else
+    disp('Solo se admite la letra "a" o la letra "v". Reinicie el programa.')
+end

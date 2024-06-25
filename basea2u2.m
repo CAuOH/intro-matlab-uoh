@@ -45,7 +45,6 @@ if answer == "a"
     xlabel("tiempo") 
     ylabel("aceleración")
     grid
-
 elseif answer == "v"
     disp(v);
     % Creación de gráfico
@@ -60,3 +59,22 @@ else
     disp('Solo se admite la letra "a" o la letra "v". Reinicie el programa.')
 end
 
+figure(3) %Declara nueva figura
+subplot(2,2,1) %subgrafico pos 1
+plot(d, t, "b");
+title("Distancia vs. tiempo")
+xlabel("distancia") 
+ylabel("tiempo")
+grid
+subplot(2,2,2) %subgrafico pos 2
+plot(d, t, "r")
+title("Distancia vs. tiempo")
+xlabel("distancia") 
+ylabel("tiempo")
+grid
+subplot(2,2,3) %subgrafico pos 3
+plot(d, t, "g")
+title("Distancia vs. tiempo")
+xlabel("distancia") 
+ylabel("tiempo")
+grid

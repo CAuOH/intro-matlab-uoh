@@ -39,7 +39,7 @@ if answer == "a"
     disp(a);
     % Creación de gráfico velocidad
     figure(1) %Declara nueva figura
-    plot(t, a, "g.")
+    plot(t, a, "-g.")
     % Etiquetas
     title("Tiempo vs. aceleración")
     xlabel("tiempo [s]") 
@@ -49,7 +49,7 @@ elseif answer == "v"
     disp(v);
     % Creación de gráfico aceleración
     figure(2) %Declara nueva figura
-    plot(t, v, "r.")
+    plot(t, v, "-r.")
     % Etiquetas
     title("Tiempo vs. velocidad")
     xlabel("tiempo [s]") 
@@ -61,28 +61,28 @@ end
 
 figure(3) %Declara nueva figura
 subplot(2,2,1) %dist pos 1
-plot(t, d, "b.");
+plot(t, d, "-b.");
 title("Distancia vs. tiempo")
 xlabel("distancia [cm]") 
 ylabel("tiempo [s]")
 grid
 subplot(2,2,2) %vel pos 2
-plot(t, v, "r.")
+plot(t, v, "-r.")
 title("Velocidad vs. tiempo")
 xlabel("velocidad [cm/s]") 
 ylabel("tiempo [s]")
 grid
 subplot(2,2,3) %acc pos 3
-plot(t, a, "g.")
+plot(t, a, "-g.")
 title("Aceleración vs. tiempo")
 xlabel("aceleración [cm/s^2]") 
 ylabel("tiempo [s]")
 grid
 subplot(2,2,4) %comb pos 4
 hold on %combina gráficos
-plot(t, d, "b.")
-plot(t, v, "r.")
-plot(t, a, "g.")
+plot(t, d, "-b.")
+plot(t, v, "-r.")
+plot(t, a, "-g.")
 hold off
 title("Distancia, Velocidad y Aceleración vs. Tiempo") %etiquetas de gráfico combinado
 xlabel("valor") 

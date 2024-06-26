@@ -27,8 +27,8 @@ a = (1:1:10);
 v = (1:1:10);
 %Asigna cada valor al calculado con la fórmula
 for i = 1:1:10;
-    a(i) = (2*a(i)) / (t(i)^2);
-    v(i) = a(i)*t(i);
+    a(i) = (2*d(i)) / (t(i)^2);
+    v(i) = a(i)*t(i);
 end
 
 %% 3. Segun lo seleccionado por el usuario:
@@ -43,27 +43,27 @@ end
 
 answer = input("¿Aceleración o velocidad (a o v)?", "s");
 if answer == "a"
-    disp(a);
-    %Creación de gráfico velocidad
-    figure(1) %Declara nueva figura
-    plot(t, a, "-r.") %El argumemto final es el formato y la inicial del color en inglés.
-    %Etiquetas
-    title("Aceleración vs. tiempo")
-    xlabel("Tiempo [s]") 
-    ylabel("Aceleración [cm/s^2]")
-    grid
+    disp(a);
+    %Creación de gráfico velocidad
+    figure(1) %Declara nueva figura
+    plot(t, a, "-r.") %El argumemto final es el formato y la inicial del color en inglés.
+    %Etiquetas
+    title("Aceleración vs. tiempo")
+    xlabel("Tiempo [s]") 
+    ylabel("Aceleración [cm/s^2]")
+    grid
 elseif answer == "v"
-    disp(v);
-    %Creación de gráfico aceleración
-    figure(2) % Declara nueva figura
-    plot(t, v, "-g.")
-    %Etiquetas
-    title("Velocidad vs. tiempo")
-    xlabel("Tiempo [s]") 
-    ylabel("Velocidad [cm/s]")
-    grid
+    disp(v);
+    %Creación de gráfico aceleración
+    figure(2) % Declara nueva figura
+    plot(t, v, "-g.")
+    %Etiquetas
+    title("Velocidad vs. tiempo")
+    xlabel("Tiempo [s]") 
+    ylabel("Velocidad [cm/s]")
+    grid
 else
-    disp('Solo se admite la letra "a" o la letra "v". Reinicie el programa.')
+    disp('Solo se admite la letra "a" o la letra "v". Reinicie el programa.')
 end
 
 %Muestra los 4 gráficos en una figura
